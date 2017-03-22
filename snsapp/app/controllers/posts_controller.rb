@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action:set_post, only:[:show, :edit, :update, :destroy]
+  before_action :set_post, only:[:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :correct_user, only: [:update, :edit]
 
   def index
     @posts = Post.all
@@ -40,11 +41,18 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params[:post].permit(:title, :body)
+    params[:post].permit(:title, :body, :user_id)
   end
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def correct_user
+    post = Post.find(params[:id])
+    if current_user.id != post.user.id
+      redirect_to root_path
+    end
   end
 
 end

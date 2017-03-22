@@ -2,8 +2,9 @@
 <%= link_to "新規作成", new_post_path %>
 
 <% @posts.each do |post| %>
-<p><%= post.title %></p>
-<p><%= post.body %></p>
+<p>タイトル：<%= post.title %></p>
+<p>内容：<%= post.body %></p>
+<p>ユーザーID：<%= post.user_id %></p>
 <p><%= link_to "詳細画面へ", post_path(post.id) %></p>
 <p><%= link_to "管理画面へ", edit_post_path(post.id) %></p>
 <a>---------------------</a>
