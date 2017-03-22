@@ -3,11 +3,6 @@
 <%= form_for @post do |f| %>
 <p>タイトル:<%= f.text_field :title %></p>
 <p>内容:<%= f.text_field :body %></p>
-    <div class="field">
-      <%= f.label :user_id %><br>
-　    ユーザーID
-      <%= f.collection_select :user_id, User.all, :id, :id%>
-    </div>
 <p><%= f.submit "投稿する" %></p>
 <% end %>
 
