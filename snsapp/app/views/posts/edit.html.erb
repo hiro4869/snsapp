@@ -1,0 +1,13 @@
+<h1>管理画面</h1>
+
+<%= form_for @post do |f| %>
+  <p>タイトル：<%= f.text_field :title %></p>
+  <p>内容：<%= f.text_field :body %></p>
+  <p><%= f.submit "更新する" %></p>
+<% end %>
+  <p><%= link_to "削除する", "/posts/#{@post.id}" ,method: :delete %></p>
+
+
+
+<%= link_to "Home", root_path %>
+

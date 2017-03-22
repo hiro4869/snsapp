@@ -1,0 +1,13 @@
+<h1>新規投稿</h1>
+
+<%= form_for @post do |f| %>
+<p>タイトル:<%= f.text_field :title %></p>
+<p>内容:<%= f.text_field :body %></p>
+<p><%= f.submit "投稿する" %></p>
+<% end %>
+
+
+
+
+
+<%= link_to "Home", root_path %>
