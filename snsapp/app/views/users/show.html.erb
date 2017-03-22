@@ -3,6 +3,12 @@
 <p>ユーザーID：<%= @user.id %></p>
 <p>ニックネーム：<%= @user.nickname %></p>
 <p>プロフィール：<%= @user.profile %></p>
+<h2>プロフィール画像</h2>
+    <% if @user.image? %>
+      <%=  image_tag @user.image.url%>
+    <% else %>
+      <%= image_tag 'noimage.gif' %>
+    <% end %>
 <p><%= link_to "プロフィールを編集する", edit_user_path(@user.id) %></p>
 
 <hr>

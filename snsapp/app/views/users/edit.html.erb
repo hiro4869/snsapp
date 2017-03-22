@@ -3,6 +3,14 @@
 <%= form_for @user do |f| %>
   <p>ニックネーム：<%= f.text_field :nickname %></p>
   <p>プロフィール：<%= f.text_field :profile %></p>
+  <div class="field">
+    <p>プロフィール画像：<%= f.file_field :image %></p>
+    <% if @user.image? %>
+      <div><%=  image_tag @user.image.url%></div>
+    <% else %>
+      <div><%= image_tag 'noimage.gif' %></div>
+    <% end %>
+  </div>
   <p><%= f.submit "更新する" %></p>
 <% end %>
 
