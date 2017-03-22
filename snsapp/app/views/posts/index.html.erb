@@ -1,6 +1,8 @@
 <h1>index</h1>
-<%= link_to "新規作成", new_post_path %>
-
+<%= link_to "新規作成", new_post_path %> |
+<%= link_to "ユーザー一覧", users_path %>
+<hr>
+<h2>タイムライン</h2>
 <% @posts.each do |post| %>
 <p>タイトル：<%= post.title %></p>
 <p>内容：<%= post.body %></p>
