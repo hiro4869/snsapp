@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:update, :edit]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(updated_at: :desc)
   end
 
   def new
@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       redirect_to root_path
     else
