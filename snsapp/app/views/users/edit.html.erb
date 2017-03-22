@@ -1,13 +1,8 @@
 <h1>ユーザー編集ページ</h1>
 
-<h1><%= @user.nickname %>さんのプロフィール</h1>
-<p>ユーザーID：<%= @user.id %></p>
-<p>ニックネーム：<%= @user.nickname %></p>
-
-<hr>
-
 <%= form_for @user do |f| %>
   <p>ニックネーム：<%= f.text_field :nickname %></p>
+  <p>プロフィール：<%= f.text_field :profile %></p>
   <p><%= f.submit "更新する" %></p>
 <% end %>
 

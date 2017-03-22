@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params[:user].permit(:nickname)
+    params[:user].permit(:nickname, :profile)
   end
 
 end
