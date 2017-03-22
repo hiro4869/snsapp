@@ -1,9 +1,10 @@
-<h1>Users#indexユーザー一覧</h1>
+<h1>ユーザー一覧</h1>
 
 <% @users.each do |user| %>
   <p>ユーザーID：<%= user.id %></p>
   <p>ニックネーム：<%= user.nickname %></p>
   <p><%= link_to "プロフィールを見る", user_path(user.id) %></p>
+
   <a>---------------------</a>
 <% end %>
 
