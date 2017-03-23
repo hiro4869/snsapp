@@ -3,14 +3,12 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  protected
 
-
-protected
-
-# Deviseのストロングパラメータを追加する
-def configure_permitted_parameters
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
-  devise_parameter_sanitizer.permit(:account_update, keys: [:nickname])
-end
+  # Deviseのストロングパラメータを追加する
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname])
+  end
 
 end
