@@ -1,13 +1,9 @@
 <h1>ユーザー一覧</h1>
-
 <% @users.each do |user| %>
   <p>ユーザーID：<%= user.id %></p>
   <p>ニックネーム：<%= link_to user.nickname, user_path(user.id) %></p>
   <a>------------------------------------------------------------------------------------</a>
 <% end %>
-
-
-
 <p><%= link_to "Home", root_path %></p>
 
 

@@ -1,19 +1,13 @@
 <h1>新規投稿</h1>
-
 <%= form_for @post do |f| %>
 <p>タイトル:<%= f.text_field :title %></p>
-    <% if @post.errors.any? %>
-      <%= @post.errors.messages[:title][0] %>
-    <% end %>
+  <% if @post.errors.any? %>
+    <%= @post.errors.messages[:title][0] %>
+  <% end %>
 <p>内容:<%= f.text_field :body %></p>
-    <% if @post.errors.any? %>
-      <%= @post.errors.messages[:body][0] %>
-    <% end %>
+  <% if @post.errors.any? %>
+    <%= @post.errors.messages[:body][0] %>
+  <% end %>
 <p><%= f.submit "投稿する" %></p>
 <% end %>
-
-
-
-
-
 <%= link_to "Home", root_path %>

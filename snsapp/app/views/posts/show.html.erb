@@ -1,16 +1,9 @@
 <h1>タイトル：<%= @post.title %></h1>
 <p>内容：<%= @post.body %></p>
 <p>投稿者：<%= link_to @post.user.nickname , user_path(@post.user.id) %></p>
-
-
-
 <% if current_user.id == @post.user_id %>
   <%= link_to "Edit", edit_post_path(@post) %> |
   <%= link_to "Destroy", @post, method: :delete, data: {confirm: "削除しますか？" } %>
 <% end %>
-
-
-
-
 <p><%= link_to "Home", root_path %></p>
 
