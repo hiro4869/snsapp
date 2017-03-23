@@ -6,7 +6,7 @@
 <% @posts.each do |post| %>
 <p>タイトル：<%= link_to post.title, post_path(post.id) %></p>
 <p>投稿者：<%= link_to post.user.nickname , user_path(post.user.id) %></p>
-<a>---------------------</a>
+<a>------------------------------------------------------------------------------------</a>
 <% end %>
 
 
