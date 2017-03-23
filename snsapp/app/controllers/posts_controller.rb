@@ -28,8 +28,11 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
-    redirect_to root_path
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      redirect_to edit_post_path(@post.id)
+    end
   end
 
   def destroy

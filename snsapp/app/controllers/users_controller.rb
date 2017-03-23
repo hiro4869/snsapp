@@ -12,8 +12,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    redirect_to users_path
+    if @user.update(user_params)
+      redirect_to users_path
+    else
+      redirect_to edit_user_path(@user.id)
+    end
   end
 
   private
@@ -34,5 +37,4 @@ class UsersController < ApplicationController
   end
 
 end
-
 
