@@ -4,13 +4,9 @@
 <hr>
 <h2>タイムライン</h2>
 <% @posts.each do |post| %>
-<p>タイトル：<%= post.title %></p>
-<p>内容：<%= post.body %></p>
-<p>ニックネーム：<%= post.user.nickname %></p>
-<p>ユーザーID：<%= post.user_id %></p>
-<p><%= link_to "詳細画面へ", post_path(post.id) %></p>
-<p><%= link_to "管理画面へ", edit_post_path(post.id) %></p>
-<a>---------------------</a>
+<p>タイトル：<%= link_to post.title, post_path(post.id) %></p>
+<p>投稿者：<%= link_to post.user.nickname , user_path(post.user.id) %></p>
+<a>------------------------------------------------------------------------------------</a>
 <% end %>
 
 

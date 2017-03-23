@@ -2,10 +2,8 @@
 
 <% @users.each do |user| %>
   <p>ユーザーID：<%= user.id %></p>
-  <p>ニックネーム：<%= user.nickname %></p>
-  <p>プロフィール：<%= user.profile %></p>
-  <p><%= link_to "プロフィールを見る", user_path(user.id) %></p>
-  <a>---------------------</a>
+  <p>ニックネーム：<%= link_to user.nickname, user_path(user.id) %></p>
+  <a>------------------------------------------------------------------------------------</a>
 <% end %>
 
 

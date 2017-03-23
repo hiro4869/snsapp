@@ -1,27 +1,32 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :update, :edit]
   before_action :correct_user, only: [:update, :edit]
   def index
     @users = User.all
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to users_path
+    if @user.update(user_params)
+      redirect_to users_path
+    else
+      redirect_to edit_user_path(@user.id)
+    end
   end
 
   private
 
   def user_params
     params[:user].permit(:nickname, :profile, :image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def correct_user
@@ -32,5 +37,4 @@ class UsersController < ApplicationController
   end
 
 end
-
 
