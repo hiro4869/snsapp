@@ -22,6 +22,8 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'devise'
 
+gem 'bootstrap-sass'
+
 gem 'carrierwave'
 # gem 'rmagick'
 
