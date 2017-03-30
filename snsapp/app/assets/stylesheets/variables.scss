@@ -48,6 +48,9 @@ a:hover, a:focus {
   background-color: $pink;
 }
 
+.container {
+  background-color: $white;
+}
 
 .timeline {
   padding: 10px;
@@ -59,14 +62,48 @@ a:hover, a:focus {
 }
 
 
-/*----(bootstrapメインカラム幅設定)--------------------*/
-.container {
-  background-color: $white;
+/*----(ヘッダー)--------------------*/
+
+.header {
+  margin: 0 auto; 
+  background-color: $black;
+  height: 50px;
 }
+
+.head_log {
+  margin-top: 5px; 
+  color: $white;
+}
+
+
+/*----(フッター)--------------------*/
+
+.footer {
+  margin: 0 auto; 
+  background-color: $black;
+  height: 30px;
+}
+
+.foot_copy {
+  margin: 5px 5px 0 0; 
+  color: $white;
+}
+
+
+/*----(レスポンシブ流対応)--------------------*/
+
 
 @media (min-width: 768px) {
   /* line 10, /Users/main/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_grid.scss */
   .container {
+    width: 750px;
+  }
+
+  .header {
+    width: 750px;
+  }
+
+  .footer {
     width: 750px;
   }
 }
@@ -75,10 +112,26 @@ a:hover, a:focus {
   .container {
     width: 970px;
   }
+
+  .header {
+    width: 970px;
+  }
+
+  .footer {
+    width: 970px;
+  }
 }
 @media (min-width: 1200px) {
   /* line 10, /Users/main/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_grid.scss */
   .container {
+    width: 1024px;
+  }
+
+  .header {
+    width: 1024px;
+  }
+
+  .footer {
     width: 1024px;
   }
 }
