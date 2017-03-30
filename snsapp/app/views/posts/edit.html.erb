@@ -1,9 +1,22 @@
-<h1>管理画面</h1>
-<%= form_for @post do |f| %>
-  <p>タイトル：<%= f.text_field :title %></p>
-  <p>内容：<%= f.text_field :body %></p>
-  <p><%= f.submit "更新する" %></p>
-<% end %>
+<div class="timeline cyan">
+  <h2>管理画面</h2>
+  <%= form_for @post do |f| %>
+    <p>
+      タイトル:
+      <br>
+      <%= f.text_field :title %>
+    </p>
+      <% if @post.errors.any? %>
+        <%= @post.errors.messages[:title][0] %>
+      <% end %>
+    <p>
+      内容:
+      <br>
+      <%= f.text_area :body, :size => "30x10" %>
+    </p>
+    <p><%= f.submit "更新する" %></p>
+  <% end %>
   <p><%= link_to "削除する", "/posts/#{@post.id}" ,method: :delete %></p>
+</div>
 <%= link_to "Home", root_path %>
 
