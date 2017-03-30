@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 .red{
   background-color: red;
@@ -28,6 +29,31 @@
 }
 
 
- 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+/*bootstrapメインカラム幅設定*/
+.container {
+  background-color: skyblue;
+}
+
+@media (min-width: 768px) {
+  /* line 10, /Users/main/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 10, /Users/main/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 10, /Users/main/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 1024px;
+  }
+}
+
+
+
+
+
