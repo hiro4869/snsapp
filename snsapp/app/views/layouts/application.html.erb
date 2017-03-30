@@ -9,13 +9,17 @@
   </head>
   <body>
     <div class="container">
-      <% if user_signed_in? %>
-        <%= current_user.email %>(<%= current_user.nickname %>)でログイン中 |
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "サインアップ", new_user_registration_path %> |
-        <%= link_to "ログイン", new_user_session_path %>
-      <% end %>
+      <div class="clearfix">
+        <p class="right">
+          <% if user_signed_in? %>
+            <%= current_user.email %>(<%= current_user.nickname %>)でログイン中 |
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "サインアップ", new_user_registration_path %> |
+            <%= link_to "ログイン", new_user_session_path %>
+          <% end %>
+        </p>
+      </div>
       <%= yield %>
     </div>
   </body>

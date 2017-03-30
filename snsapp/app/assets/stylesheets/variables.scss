@@ -2,14 +2,12 @@
 @import "bootstrap";
 
 
-/*色の変数の定義*/
+/*----(色の変数の定義)----------------------------*/
 $black: #364F6B;
 $cyan: #3FC1C9;
 $white: #F5F5F5;
 $pink: #FC5185;
 $darkpink: #d64470;
-
-
 
 
 /*----(共通部分)--------------------------------*/
@@ -28,6 +26,11 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
 
 .black {
   background-color: $black;
@@ -46,18 +49,17 @@ a:hover, a:focus {
 }
 
 
-
-
-
-
-
 .timeline {
   padding: 10px;
   margin: 10px;
 }
 
+.right {
+  float: right;
+}
 
-/*bootstrapメインカラム幅設定*/
+
+/*----(bootstrapメインカラム幅設定)--------------------*/
 .container {
   background-color: $white;
 }
