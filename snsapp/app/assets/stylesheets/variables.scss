@@ -1,0 +1,82 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/*色の変数の定義*/
+$black: #364F6B;
+$cyan: #3FC1C9;
+$white: #F5F5F5;
+$pink: #FC5185;
+$darkpink: #d64470;
+
+
+
+
+/*----(共通部分)--------------------------------*/
+
+body {
+  color: $black;
+}
+
+a {
+  color: $pink;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: $darkpink;
+  text-decoration: underline;
+}
+
+
+.black {
+  background-color: $black;
+}
+
+.cyan {
+  background-color: $cyan;
+}
+
+.white {
+  background-color: $white;
+}
+
+.pink {
+  background-color: $pink;
+}
+
+
+
+
+
+
+
+.timeline {
+  padding: 10px;
+  margin: 10px;
+}
+
+
+/*bootstrapメインカラム幅設定*/
+.container {
+  background-color: $white;
+}
+
+@media (min-width: 768px) {
+  /* line 10, /Users/main/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 10, /Users/main/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 10, /Users/main/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 1024px;
+  }
+}

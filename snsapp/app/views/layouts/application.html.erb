@@ -10,8 +10,7 @@
   <body>
     <div class="container">
       <% if user_signed_in? %>
-        Logged in as <%= current_user.email %> |
-        あなたのニックネーム<%= current_user.nickname %>
+        <%= current_user.email %>(<%= current_user.nickname %>)でログイン中 |
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to "サインアップ", new_user_registration_path %> |
