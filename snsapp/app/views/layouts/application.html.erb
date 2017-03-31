@@ -8,15 +8,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+      <div class="header clearfix">
+        <p class="head_log right">
+          <% if user_signed_in? %>
+            <%= current_user.email %>(<%= current_user.nickname %>)でログイン中 |
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "サインアップ", new_user_registration_path %> |
+            <%= link_to "ログイン", new_user_session_path %>
+          <% end %>
+        </p>
+      </div>
     <div class="container">
-      <% if user_signed_in? %>
-        <%= current_user.email %>(<%= current_user.nickname %>)でログイン中 |
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "サインアップ", new_user_registration_path %> |
-        <%= link_to "ログイン", new_user_session_path %>
-      <% end %>
       <%= yield %>
     </div>
+    <div class="footer clearfix">
+      <p class="foot_copy right">
+        Copyright© Fukunaga All Rights Reserved.
+      </p>
+    </div>
+
   </body>
 </html>
