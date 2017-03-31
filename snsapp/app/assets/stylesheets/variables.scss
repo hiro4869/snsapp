@@ -95,6 +95,13 @@ a:hover, a:focus {
 
 /*----(レスポンシブ流対応)--------------------*/
 
+@media (max-width: 767px) {
+  .top-display {
+    display: none;
+  }
+
+}
+
 
 @media (min-width: 768px) {
   /* line 10, /Users/main/.rvm/gems/ruby-2.3.3/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_grid.scss */
