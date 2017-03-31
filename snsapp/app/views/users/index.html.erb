@@ -3,6 +3,11 @@
   <div class="timeline cyan">
     <p>ユーザーID：<%= user.id %></p>
     <p>ニックネーム：<%= link_to user.nickname, user_path(user.id) %></p>
+    <div>
+      <% if user.image? %>
+        <%=  image_tag user.image.url%>
+      <% end %>
+    </div>
   </div>
 <% end %>
 <p><%= link_to "Home", root_path %></p>

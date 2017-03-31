@@ -9,5 +9,10 @@
       <h3>タイトル：<%= link_to post.title, post_path(post.id) %></h3>
       <p>投稿者：<%= link_to post.user.nickname , user_path(post.user.id) %></p>
       <p>内容：<%= post.body %></p>
+      <p>
+        <% if post.image? %>
+          <%=  image_tag post.image.url%>
+        <% end %>
+      </p>
     </div>
   <% end %>
