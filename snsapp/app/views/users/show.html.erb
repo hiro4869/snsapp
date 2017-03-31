@@ -1,5 +1,5 @@
+<h2 class="left-add-margin"><%= @user.nickname %>さんのプロフィール</h2>
 <div class="timeline cyan">
-  <h2><%= @user.nickname %>さんのプロフィール</h2>
   <p>ユーザーID：<%= @user.id %></p>
   <p>ニックネーム：<%= @user.nickname %></p>
   <p>プロフィール：<%= @user.profile %></p>
@@ -14,6 +14,8 @@
     <p><%= link_to "プロフィールを編集する", edit_user_path(@user.id) %></p>
   <% end %>
 </div>
-<%= link_to "ユーザー一覧", users_path %> |
-<%= link_to "Home", root_path %>
+<p class="left-add-margin">
+  <%= link_to "ユーザー一覧", users_path %> |
+  <%= link_to "Home", root_path %>
+</p>
 

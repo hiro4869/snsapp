@@ -1,18 +1,22 @@
-
-  <h1>美味しいカレー屋さんを語るコミュニティ</h1>
+<div class="left-add-margin">
+  <h1>Animania</h1>
+  <p>動物を語るコミュニティ</p>
+</div>
+<hr>
+<p class="left-add-margin">
   <%= link_to "新規作成", new_post_path %> |
   <%= link_to "ユーザー一覧", users_path %>
-  <hr>
-  <h2>タイムライン</h2>
-  <% @posts.each do |post| %>
-    <div class="timeline cyan">
-      <h3>タイトル：<%= link_to post.title, post_path(post.id) %></h3>
-      <p>投稿者：<%= link_to post.user.nickname , user_path(post.user.id) %></p>
-      <p>内容：<%= post.body %></p>
-      <p>
-        <% if post.image? %>
-          <%=  image_tag post.image.url%>
-        <% end %>
-      </p>
-    </div>
-  <% end %>
+</p>
+<h2 class="left-add-margin">タイムライン</h2>
+<% @posts.each do |post| %>
+  <div class="timeline cyan">
+    <h3>タイトル：<%= link_to post.title, post_path(post.id) %></h3>
+    <p>投稿者：<%= link_to post.user.nickname , user_path(post.user.id) %></p>
+    <p>内容：<%= post.body %></p>
+    <p>
+      <% if post.image? %>
+        <%=  image_tag post.image.url%>
+      <% end %>
+    </p>
+  </div>
+<% end %>

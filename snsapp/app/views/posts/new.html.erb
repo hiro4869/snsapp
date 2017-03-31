@@ -1,5 +1,5 @@
+<h2 class="left-add-margin">新規投稿</h2>
 <div class="timeline cyan">
-  <h2>新規投稿</h2>
   <%= form_for @post do |f| %>
     <p>
       タイトル:
@@ -30,4 +30,6 @@
     <p><%= f.submit "投稿する" %></p>
   <% end %>
 </div>
-<%= link_to "Home", root_path %>
+<p class="left-add-margin">
+  <%= link_to "Home", root_path %>
+</p>

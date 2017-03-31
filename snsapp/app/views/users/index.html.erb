@@ -1,4 +1,4 @@
-<h2>ユーザー一覧</h2>
+<h2 class="left-add-margin">ユーザー一覧</h2>
 <% @users.each do |user| %>
   <div class="timeline cyan">
     <p>ユーザーID：<%= user.id %></p>
@@ -10,7 +10,7 @@
     </div>
   </div>
 <% end %>
-<p><%= link_to "Home", root_path %></p>
+<p class="left-add-margin"><%= link_to "Home", root_path %></p>
 
 
 

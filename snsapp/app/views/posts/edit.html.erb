@@ -1,5 +1,5 @@
+<h2 class="left-add-margin">管理画面</h2>
 <div class="timeline cyan">
-  <h2>管理画面</h2>
   <%= form_for @post do |f| %>
     <p>
       タイトル:
@@ -30,5 +30,7 @@
   <% end %>
   <p><%= link_to "削除する", "/posts/#{@post.id}" ,method: :delete %></p>
 </div>
-<%= link_to "Home", root_path %>
+<p class="left-add-margin">
+  <%= link_to "Home", root_path %>
+</p>
 
