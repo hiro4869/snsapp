@@ -1,23 +1,35 @@
+<h2 class="left-add-margin">新規投稿</h2>
 <div class="timeline cyan">
-  <h2>新規投稿</h2>
   <%= form_for @post do |f| %>
-  <p>
-    タイトル:
-    <br>
-    <%= f.text_field :title %>
-  </p>
-    <% if @post.errors.any? %>
-      <%= @post.errors.messages[:title][0] %>
-    <% end %>
-  <p>
-    内容:
-    <br>
-    <%= f.text_area :body, :size => "30x10" %>
-  </p>
-    <% if @post.errors.any? %>
-      <%= @post.errors.messages[:body][0] %>
-    <% end %>
-  <p><%= f.submit "投稿する" %></p>
+    <p>
+      タイトル:
+      <br>
+      <%= f.text_field :title %>
+    </p>
+      <% if @post.errors.any? %>
+        <%= @post.errors.messages[:title][0] %>
+      <% end %>
+    <p>
+      内容:
+      <br>
+      <%= f.text_area :body, :size => "30x10" %>
+    </p>
+      <% if @post.errors.any? %>
+        <%= @post.errors.messages[:body][0] %>
+      <% end %>
+    <div class="field">
+      <p>
+        画像：
+        <br>
+        <%= f.file_field :image %>
+      </p>
+      <% if @post.image? %>
+        <div><%=  image_tag @post.image.url%></div>
+      <% end %>
+    </div>
+    <p><%= f.submit "投稿する" %></p>
   <% end %>
 </div>
-<%= link_to "Home", root_path %>
+<p class="left-add-margin">
+  <%= link_to "Home", root_path %>
+</p>

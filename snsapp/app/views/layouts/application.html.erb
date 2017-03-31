@@ -11,7 +11,9 @@
       <div class="header clearfix">
         <p class="head_log right">
           <% if user_signed_in? %>
+          <span class="top-display">
             <%= current_user.email %>(<%= current_user.nickname %>)でログイン中 |
+          </span>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to "サインアップ", new_user_registration_path %> |

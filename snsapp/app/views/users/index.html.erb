@@ -1,11 +1,16 @@
-<h2>ユーザー一覧</h2>
+<h2 class="left-add-margin">ユーザー一覧</h2>
 <% @users.each do |user| %>
   <div class="timeline cyan">
     <p>ユーザーID：<%= user.id %></p>
     <p>ニックネーム：<%= link_to user.nickname, user_path(user.id) %></p>
+    <div>
+      <% if user.image? %>
+        <%=  image_tag user.image.url%>
+      <% end %>
+    </div>
   </div>
 <% end %>
-<p><%= link_to "Home", root_path %></p>
+<p class="left-add-margin"><%= link_to "Home", root_path %></p>
 
 
 

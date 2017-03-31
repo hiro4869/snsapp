@@ -61,6 +61,9 @@ a:hover, a:focus {
   float: right;
 }
 
+.left-add-margin {
+  margin-left: 10px;
+}
 
 /*----(ヘッダー)--------------------*/
 
@@ -91,6 +94,13 @@ a:hover, a:focus {
 
 
 /*----(レスポンシブ流対応)--------------------*/
+
+@media (max-width: 767px) {
+  .top-display {
+    display: none;
+  }
+
+}
 
 
 @media (min-width: 768px) {

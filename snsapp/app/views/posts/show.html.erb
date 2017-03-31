@@ -1,11 +1,19 @@
 <div class="timeline cyan">
-  <h2>タイトル：<%= @post.title %></h2>
+<h2>タイトル：<%= @post.title %></h2>
   <p>投稿者：<%= link_to @post.user.nickname , user_path(@post.user.id) %></p>
   <p>内容：<%= @post.body %></p>
+  <p>
+    <% if @post.image? %>
+      <%=  image_tag @post.image.url%>
+    <% end %>
+  </p>
   <% if current_user.id == @post.user_id %>
     <%= link_to "編集", edit_post_path(@post) %> |
     <%= link_to "削除", @post, method: :delete, data: {confirm: "削除しますか？" } %>
   <% end %>
-  <p><%= link_to "Home", root_path %></p>
 </div>
+<p class="left-add-margin">
+  <%= link_to "Home", root_path %>
+</p>
+
 

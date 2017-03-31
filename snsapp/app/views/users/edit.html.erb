@@ -1,5 +1,5 @@
+<h2 class="left-add-margin">ユーザー編集ページ</h2>
 <div class="timeline cyan">
-  <h2>ユーザー編集ページ</h2>
 
   <%= form_for @user do |f| %>
     <p>
@@ -27,7 +27,7 @@
     <p><%= f.submit "更新する" %></p>
   <% end %>
 </div>
-
-<hr>
-<%= link_to "ユーザー一覧", users_path %> |
-<%= link_to "Home", root_path %>
+<p class="left-add-margin">
+  <%= link_to "ユーザー一覧", users_path %> |
+  <%= link_to "Home", root_path %>
+</p>
